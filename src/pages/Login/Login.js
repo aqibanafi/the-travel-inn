@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const {logIn, setLoading} = useContext(AuthContext)
+    const {signIn, setLoading} = useContext(AuthContext)
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
     const navigate = useNavigate();
@@ -12,11 +12,12 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/';
 
     const handleSignIn = () => {
-        logIn(email, password)
+        signIn(email, password)
         .then(result => {
             const user = result.user;
             if(user.emailVerified) {
                 navigate(from, {replace: true});
+                toast.success('Login Successful!')
             } else {
                 toast.error('Your email is not verified. Please verify your email address.')
             }
@@ -53,6 +54,10 @@ const Login = () => {
                             </div>
                             <input onBlur={getPassword} type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100" />
                         </div>
+                    </div>
+                    <div>
+                        <p>Email: ixrtmpmaqdsjlpipjy@tmmbt.com </p>
+                        <p>Password: 123456 </p>
                     </div>
                     <div className="space-y-2">
                         <div>

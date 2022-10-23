@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CoxBazarDetailDisplay = ({ info }) => {
     const { title, details, price, image } = info;
@@ -15,7 +16,9 @@ const CoxBazarDetailDisplay = ({ info }) => {
                         <p className='mt-4 text-xl font-semibold'>Price ($): <span>{price}</span></p>
                     </div>
                     <div>
+                        <Link to='/bookingform'>
                         <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-400 dark:text-gray-900">Book Now</button>
+                        </Link>
                     </div>
                 </div>
             </div>

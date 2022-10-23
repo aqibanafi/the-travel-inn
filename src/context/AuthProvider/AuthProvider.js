@@ -8,48 +8,45 @@ export const AuthContext = createContext()
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-   const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
-    console.log(user)
+    const [userData, setUserData] = useState()
 
-    const createAccount = (email, password) => {
+    const logOut = () => {
+        setLoading(true)
+        return signOut(auth);
+    }
+
+    const signIn = (email, password) => {
+        setLoading(true)
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
-    const logIn = (email, password) => {
-        setLoading(true)
-        return signInWithEmailAndPassword(auth, email, password);
+    const updateUserProfile = profile => {
+        return updateProfile(auth.currentUser, profile)
     }
 
-    const verifyEmail = () =>{
-        setLoading(true)
-        return sendEmailVerification(auth.currentUser);
+    const verifyEmail = () => {
+        return sendEmailVerification(auth.currentUser)
     }
-
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            if(currentUser === null || currentUser.emailVerified) {
-                setUser(currentUser)
+            
+            if (currentUser === null || currentUser.emailVerified) {
+                setUserData(currentUser)
             }
             setLoading(false)
-        });
-
+        })
         return () => {
-            unSubscribe();
+            unSubscribe()
         }
     }, [])
 
-    const logOut = () => {
-        setLoading(true)
-        return signOut(auth)
-    }
-
-    const updateUserProfile = profile => {
-        return updateProfile(auth.currentUser, profile);
-    }
-
-    const authInfo = { createAccount, logIn, logOut, loading, setLoading, verifyEmail, updateUserProfile, user };
+    const authInfo = { userData, loading, setLoading, logOut, createUser, signIn, updateUserProfile, verifyEmail };
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

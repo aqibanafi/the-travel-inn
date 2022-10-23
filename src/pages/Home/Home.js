@@ -48,18 +48,25 @@ const Home = () => {
                         </div>
                         <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
                             <div className="flex flex-col gap-6">
-                                <div className='relative shadow-xl hover:scale-110 duration-200 ease-in-out'>
-                                    <img className='rounded-2xl' src={Coxbazar} alt="" />
-                                    <h2 className='absolute bottom-5 left-5 text-white text-3xl font-bold'>Cox Bazar</h2>
-                                </div>
-                                <div className='relative shadow-xl hover:scale-110 duration-200 ease-in-out'>
-                                    <img className='rounded-2xl' src={Bandorban} alt="" />
-                                    <h2 className='absolute bottom-5 left-5 text-white text-3xl font-bold'>Bandarban</h2>
-                                </div>
-                                <div className='relative shadow-xl hover:scale-110 duration-300 ease-in-out'>
-                                    <img className='rounded-2xl' src={Srimongal} alt="" />
-                                    <h2 className='absolute bottom-5 left-5 text-white text-3xl font-bold'>Srimangal</h2>
-                                </div>
+                                <Link to='/coxbazarbooking'>
+                                    <div className='relative shadow-xl hover:scale-110 duration-200 ease-in-out'>
+                                        <img className='rounded-2xl' src={Coxbazar} alt="" />
+                                        <h2 className='absolute bottom-5 left-5 text-white text-3xl font-bold'>Cox Bazar</h2>
+                                    </div>
+                                </Link>
+                                <Link to='/bandarbonbooking'>
+                                    <div className='relative shadow-xl hover:scale-110 duration-200 ease-in-out'>
+                                        <img className='rounded-2xl' src={Bandorban} alt="" />
+                                        <h2 className='absolute bottom-5 left-5 text-white text-3xl font-bold'>Bandarban</h2>
+                                    </div>
+                                </Link>
+                                <Link to='/srimangalbooking'>
+                                    <div className='relative shadow-xl hover:scale-110 duration-300 ease-in-out'>
+                                        <img className='rounded-2xl' src={Srimongal} alt="" />
+                                        <h2 className='absolute bottom-5 left-5 text-white text-3xl font-bold'>Srimangal</h2>
+                                    </div>
+                                </Link>
+
                             </div>
                         </div>
                     </div>

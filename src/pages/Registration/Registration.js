@@ -8,9 +8,9 @@ const Registration = () => {
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
     const [accepted, setAccepted] = useState(true)
-    const { createAccount, verifyEmail, updateUserProfile } = useContext(AuthContext)
+    const { createUser, verifyEmail, updateUserProfile } = useContext(AuthContext)
     const handlecreateAccount = () => {
-        createAccount(email, password)
+        createUser(email, password)
             .then(result => {
                 const user = result.user;
                 handleEmailVerification()

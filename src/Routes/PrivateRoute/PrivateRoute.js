@@ -4,18 +4,17 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 
 const PrivateRoute = ({children}) => {
-    const {user, loading} = useContext(AuthContext)
+    const {userData, loading} = useContext(AuthContext)
     const location = useLocation()
-    console.log(user)
 
     if(loading){
         return  <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
     }
 
-    if(!user) {
-        return <Navigate to='/login' state={{from: location}}></Navigate>
+    if(userData) {
+        return children;
     }
-    return children;
+    return <Navigate to='/login' state={{from: location}}></Navigate>;
     
     
 };
