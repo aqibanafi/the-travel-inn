@@ -19,14 +19,12 @@ const Home = () => {
                     <div className="flex flex-col items-center justify-between xl:flex-row">
                         <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
                             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
-                                The quick, brown fox <br className="hidden md:block" />
-                                jumps over a{' '}
-                                <span className="text-teal-accent-400">lazy dog</span>
+                                A Wonderful Travel <br className="hidden md:block" />
+                                Package{' '}
+                                <span className="text-teal-accent-400">For You</span>
                             </h2>
                             <p className="max-w-xl mb-4 text-base text-gray-400 md:text-lg">
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                accusantium doloremque laudan, totam rem aperiam, eaque ipsa
-                                quae.
+                            Bring inspiring and insightful destination expert, Doug Lansky, to your next event.Smart Destination Development, Branding Strategy, Experience Design. Customized Advice. 20 Years of experience. 
                             </p>
                             <div className='flex gap-3'>
                                 <Link

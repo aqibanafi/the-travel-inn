@@ -24,7 +24,7 @@ const BandarbanBooking = () => {
             />
             <div className="relative bg-gray-900 bg-opacity-75">
                 <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-                    <div className="flex items-center justify-between xl:flex-row">
+                    <div className="flex flex-col items-center justify-between xl:flex-row">
                         <div className='w-4/6'>
                             <h1 className='text-5xl text-white font-bold mb-12'>Book Our Best Service Today!</h1>
                             <p className='text-white w-3/4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, perspiciatis magnam commodi quos quaerat sit! Nobis, quaerat. Inventore, aperiam qui!</p>

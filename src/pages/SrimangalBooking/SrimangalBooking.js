@@ -24,13 +24,13 @@ const SrimangalBooking = () => {
             />
             <div className="relative bg-gray-900 bg-opacity-75">
                 <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-                    <div className="flex items-center justify-between xl:flex-row">
+                    <div className="flex flex-col items-center xl:flex-row">
                         <div className='w-4/6'>
                             <h1 className='text-5xl text-white font-bold mb-12'>Book Our Best Service Today!</h1>
                             <p className='text-white w-3/4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, perspiciatis magnam commodi quos quaerat sit! Nobis, quaerat. Inventore, aperiam qui!</p>
                         </div>
                         <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
-                            <div className='flex justify-center mt-20 mb-20'>
+                            <div className='flex justify-center items-center mt-20 mb-20'>
                                 <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-gray-900 dark:text-gray-100">
                                     <div className="mb-8 text-center">
                                         <h1 className="my-3 text-4xl font-bold">Book Today</h1>

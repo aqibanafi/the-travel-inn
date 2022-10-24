@@ -56,7 +56,7 @@ const Login = () => {
                         </div>
                     </div>
                     <div>
-                        <p>Email: ixrtmpmaqdsjlpipjy@tmmbt.com </p>
+                        <p>Email: paqaliqu@teleg.eu </p>
                         <p>Password: 123456 </p>
                     </div>
                     <div className="space-y-2">
