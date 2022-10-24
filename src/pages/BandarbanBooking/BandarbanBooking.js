@@ -1,20 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Calendar from 'react-calendar';
-import { FaCalendarAlt } from 'react-icons/fa';
 import Hero from '../../assets/images/background-image.jpg'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const BandarbanBooking = () => {
-    const [date, setDate] = useState(new Date())
-    const [from, setFrom] = useState(true);
-    const [to, setTo] = useState(true);
-    const handleShowFromCalendar = event => {
-        setFrom(event.target.checked)
-    }
+    const [startFromDate, setStartFromDate] = useState(new Date());
+    const [startToDate, setStartToDate] = useState(new Date());
 
-    const handleShowToCalendar = event => {
-        setTo(event.target.checked)
-    }
     return (
         <div className="relative">
             <img
@@ -50,33 +43,13 @@ const BandarbanBooking = () => {
                                                 <input type="text" name="password" id="destination" placeholder="Cox-Bazar" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100" />
                                             </div>
                                             <div className='flex gap-2'>
-                                                <div>
-                                                    <label for="text" className="block mb-2 text-sm">From</label>
-                                                    <Link onClick={handleShowFromCalendar}><FaCalendarAlt></FaCalendarAlt></Link>
-                                                    <div hidden={from}>
-                                                        <h1 className="header">React Calendar</h1>
-                                                        <div className="calendar-container">
-                                                            <Calendar onChange={setDate} value={date} />
-                                                        </div>
-                                                        <div className="text-center">
-                                                            Selected date: {date.toDateString()}
-                                                        </div>
-                                                    </div>
-                                                    <input type="text" name="origin" id="origin" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100" />
+                                                <div className="flex items-center mb-2 gap-3">
+                                                    <label for="destination" className="text-sm">From</label>
+                                                    <DatePicker className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100" selected={startFromDate} onChange={(date) => setStartFromDate(date)} />
                                                 </div>
-                                                <div>
-                                                    <label for="text" className="block mb-2 text-sm">To</label>
-                                                    <Link onClick={handleShowToCalendar}><FaCalendarAlt></FaCalendarAlt></Link>
-                                                    <div hidden={to}>
-                                                        <h1 className="header">React Calendar</h1>
-                                                        <div className="calendar-container">
-                                                            <Calendar onChange={setDate} value={date} />
-                                                        </div>
-                                                        <div className="text-center">
-                                                            Selected date: {date.toDateString()}
-                                                        </div>
-                                                    </div>
-                                                    <input type="text" name="origin" id="origin" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100" />
+                                                <div className="flex items-center mb-2 gap-3">
+                                                    <label for="destination" className="text-sm">To</label>
+                                                    <DatePicker className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100" selected={startToDate} onChange={(date) => setStartToDate(date)} />
                                                 </div>
                                             </div>
                                         </div>
